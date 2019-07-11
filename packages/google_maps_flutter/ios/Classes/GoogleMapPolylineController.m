@@ -31,6 +31,9 @@
 - (void)setConsumeTapEvents:(BOOL)consumes {
   _polyline.tappable = consumes;
 }
+- (void)setGeodesic:(BOOL)geodesic {
+  _polyline.geodesic = geodesic;
+}
 - (void)setVisible:(BOOL)visible {
   _polyline.map = visible ? _mapView : nil;
 }
@@ -69,6 +72,11 @@ static void InterpretPolylineOptions(NSDictionary* data, id<FLTGoogleMapPolyline
   NSNumber* consumeTapEvents = data[@"consumeTapEvents"];
   if (consumeTapEvents) {
     [sink setConsumeTapEvents:ToBool(consumeTapEvents)];
+  }
+
+  NSNumber* geodesic = data[@"geodesic"];
+  if (geodesic) {
+    [sink setGeodesic:ToBool(geodesic)];
   }
 
   NSNumber* visible = data[@"visible"];

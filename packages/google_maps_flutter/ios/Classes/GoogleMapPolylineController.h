@@ -8,6 +8,7 @@
 // Defines polyline UI options writable from Flutter.
 @protocol FLTGoogleMapPolylineOptionsSink
 - (void)setConsumeTapEvents:(BOOL)consume;
+- (void)setGeodesic:(BOOL)geodesic;
 - (void)setVisible:(BOOL)visible;
 - (void)setColor:(UIColor*)color;
 - (void)setStrokeWidth:(CGFloat)width;
